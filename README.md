@@ -8,7 +8,7 @@ Instructions for setting up GraphQL in Django project.
 
 **Table of contents:**
 
-1. [Graphene Installation](graphene-installation)
+1. [Graphene Installation](#graphene-installation)
 2. [Why GrapQL?](#why-graphql)
 3. [Creating Schema](#creating-schema)
 
