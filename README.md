@@ -12,11 +12,11 @@ Instructions for setting up GraphQL in Django project.
 2. [Why GrapQL?](#why-graphql)
 3. [Creating Schema](#creating-schema)
 
-**Graphene Intallation**
+## Graphene Intallation
 
 Install Graphene: `pip install django_graphene`
 
-**Why GraphQL?**
+## Why GraphQL
 
 - No more versioned APIs
 - Smaller payloads
@@ -26,7 +26,7 @@ Install Graphene: `pip install django_graphene`
 - Legacy app support
 - Better error handling
 
-**Creating Schema**
+## Creating Schema
 
 ```py
 
@@ -60,5 +60,50 @@ class Query(graphene.ObjectType):
             return None
 
 schema = graphene.Schema(query=Query)
+
+```
+
+
+## User Registration
+
+After registration check your terminal for the activation key then use pass the 
+key to the token fild in [account verification](#account-verification)
+
+```py
+mutation {
+  register(email: "linux2@gmail.com", username: "Linux2", password1: "dominic70", password2: "dominic70") {
+    success
+    errors
+    token
+    refreshToken
+  }
+}
+
+```
+
+
+## Account Verification
+
+```py
+mutation{
+  verifyAccount(token:"eyJ1c2VybmFtZSI6IkxpbnV4MiIsImFjdGlvbiI6ImFjdGl2YXRpb24ifQ:1nEI2e:ADhKNBWP2c3nIEMVNhfXbUgVIVB-GS64uZ2iNs0qrHk"){
+    success, errors
+  }
+}
+```
+
+
+## User Query
+
+```py
+{
+  users{
+    edges{
+      node{
+        username
+      }
+    }
+  }
+}
 
 ```
