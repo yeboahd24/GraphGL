@@ -14,7 +14,7 @@ Instructions for setting up GraphQL in Django project.
 
 **Graphene Intallation**
 
-Install Graphene: `pip install django_graphene`
+Install Graphene: `pip install django-graphene`
 
 **Why GraphQL?**
 
